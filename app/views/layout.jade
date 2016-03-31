@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title Double.tf
+    block css
+      link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+      link(rel="stylesheet", href='swal/sweetalert.css')
+      link(rel="stylesheet", href='scroll/perfect-scrollbar.min.css')
+      link(rel='stylesheet', href='/style.css')
+    block js
+      script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+      script(src="//ricostacruz.com/jquery.transit/jquery.transit.min.js")
+      script(src='scroll/perfect-scrollbar.jquery.js')
+      script(src="/socket.io/socket.io.js")
+      script(src="swal/sweetalert.min.js")
+      script(src='/script.js')
+      if ENV_DEVELOPMENT
+        script(src='http://dev.skinduel.com:35729/livereload.js')
+  body
+    block content

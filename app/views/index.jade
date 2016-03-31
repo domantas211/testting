@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  .navbar
+    ul
+      li
+        a.tooltip-bottom(href="#", data-tooltip="Play roulette!")
+          span.glyphicon.glyphicon-piggy-bank
+      li
+        a.tooltip-bottom.deposit(href="#", data-tooltip="Deposit Skins")
+          span.glyphicon.glyphicon-plus-sign
+      li
+        a.tooltip-bottom.withdraw-menu(href="#", data-tooltip="Withdraw Skins")
+          span.glyphicon.glyphicon-arrow-down
+      //li
+      //  a.tooltip-bottom.free-skins(href="#", data-tooltip="Free Skins")
+       //   span.glyphicon.glyphicon-usd.highlight
+      //li
+      //  a.tooltip-bottom.referral-link(href="#", data-tooltip="Referral Link")
+      //    span.glyphicon.glyphicon-book
+      li
+        a.tooltip-bottom.change-url(href="#", data-tooltip="Change Trade URL")
+          span.glyphicon.glyphicon-pencil
+      li
+        a.tooltip-bottom(href="/auth/steam", data-tooltip="Log In")
+
+            .timer-text 30.00
+        .item-area
+          .ticker
+      .panel
+        .history
+          .circle.black
+            b 1
+          .circle.red 
+            b 4
+          .circle.red
+            b 8
+      .panel
+        .panel-content
+          .deposit-area
+            .panel-content
+              .credits
+                | Loading...
+              .circle.red X
+              .circle.pink 1
+              .circle.orange 5
+              .circle.lime 10
+              .circle.green 100
+              .circle.cyan 1000
+              .circle.blue 10000
+              .circle.grey
+                | x2
+              .circle.black
+                | 1/2
+
+            input.deposit-form(type="number", placeholder="Amount...", value=0)
+          .player-area.clearfix
+            .col-xs-4
+              .player-container
+                h5.player-header.red(data-id=1)
+                  | Red
+                  .player-header-credits 0
+                ul.red
+            .col-xs-4
+              .player-container
+                h5.player-header.green(data-id=0)
+                  | Green
+                  .player-header-credits 0
+                ul.green
+            .col-xs-4
+              .player-container
+                h5.player-header.black(data-id=2)
+                  | Black
+                  .player-header-credits 0
+                ul.black
+  .withdraw-container(hidden=true)
+    .withdraw.clearfix
+      h2 Withdraw
+      .withdraw-area
+        .withdraw-scroll
+      .credits-info 0 / 0 Credits
+      button.withdraw-button Withdraw!
+      button.cancel-button Cancel
+  .notifications
